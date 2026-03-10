@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreAdmin</title>
+    <link rel="stylesheet" href="StoreAdmin.css">
+</head>
+<body>
+    <Header>
+        <h1>StoreAdmin</h1>
+        <div>
+            <button onclick="changesection('Store')">Store</button>
+            <button onclick="changesection('Inventary')">Inventary</button>
+            <button onclick="changesection('Estadistics')">Estadistics</button>
+            <button onclick="changesection('')"></button>    
+        </div>
+    </Header>
+    <main>
+        <section id="Store">
+            <H1>This is your store</H1>
+            <button id="To sell" onclick="Sell()">To sell</button>
+            <br>
+            <div id="Sell">
+                <p>Find the product to sell</p>
+                <input type="text" id="producttosearch" >
+                <button onclick="Searchproduct()">Search</button>
+                <div id="searchresults">
+                </div>
+            </div>
+            <div id="billcontiner">
+            <h1 class="billproduct">product</h1>
+            <h2 class="billproduct">price</h2>
+            <ul id="bill">
+            </ul>
+            <h1 class="billproduct">TOTAL $</h1>
+            <h2 class="billproduct" id="total">0</h2>
+            <button onclick="clearbill()">clear bill</button>
+            <p>thanks for buy here</p>
+            <button onclick="confirmationofsell()" class="billproduct">confirm sell</button>
+            </div>
+        </section>
+
+        <section id="Inventary" style="display:none">
+           <Button id="A1" onclick="Addproduct()">.Add a product</Button>
+            
+<div id = "window">
+    <label for="Productname">Product Name:</label>
+    <input class="product inputfield" type="text" id="Productname" name="Productname">
+    <br>
+    <label for="Productdescription">Product Description:</label>
+    <input class="product inputfield" type="text" id="Productdescription" name="Productdescription">
+    <br>
+   <label for="Productprice">Product Price: $</label>
+    <input class="product inputfield" type="number" id="Productprice" name="Productprice" step="0.01" min="0.001">
+    <br>
+    <button id="A2" onclick="submit()">Add a product</button>
+</div>
+<h2 id="mensage">you have not added a product</h2>
+            <div id="productscontiner">
+            </div>
+        </section>
+        <section id="Estadistics">
+            <div id="salezcontiner">
+                <h3>sales</h3>
+            </div>
+            <div id="saleinfo">
+                <button onclick="hideinfo()">hide</button>
+                <h2>sale information</h2>
+            <div id="windowsale">
+            </div>
+            </div>
+        </section>
+    </main>
+    <script src="Basiccontrols.js"></script>
+</body>
+</html>

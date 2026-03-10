@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Being aware Welcome</title>
+    <link rel="stylesheet" href="Reset.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <button onclick="cerrarSesion()" id="cerrassession">cerrar sesion</button>
+    <button id="login" onclick="registrarse()">registrarse</button>
+    <div id="logincontainer" style="display: none;">
+        <H1>Registrarse</H1>
+        <label for="User">Usuario</label>
+        <input type="text" id="User" placeholder="Enter your username">
+        <br>
+        <label for="Password">Contraseña</label>
+        <input type="password" id="Password" placeholder="Enter your password">
+        <br>
+        <label for="E-mail">E-mail</label>
+        <input type="email" id="E-mail" placeholder="Enter your email">
+        <br>
+        <button onclick="login()">Registrarse</button>
+                <H1>iniciar sesion</H1>
+        <br>
+        <label for="Passwordsesion">Contraseña</label>
+        <input type="password" id="Passwordsesion" placeholder="Enter your password">
+        <br>
+        <label for="E-mailsesion">E-mail</label>
+        <input type="email" id="E-mailsesion" placeholder="Enter your email">
+        <br>
+        <button onclick="entrar()">Iniciar sesion</button>
+    </div>
+    <H1>Being aware</H1>
+    <p id="welcome-msg">¡Bienvenido a Being aware!</p>
+    <section>
+        <H1>Bienvenido a being aware</H1>
+        <p>¡Bienvenido a Being aware! Este sitio web está diseñado para mantenerte informado sobre todo lo relacionado con nuestro colegio. Aquí encontrarás noticias, eventos, actividades y un foro para compartir tus ideas y opiniones con otros miembros de la comunidad escolar. ¡Explora el sitio y mantente al tanto de todo lo que sucede en nuestro colegio!</p>
+        <div>
+            <button onclick="changeSection('Being_aware_Forum.html')">Ir al foro</button>
+        </div>
+    </section>
+    <Script type="module" src="Welcome.js"></Script>
+</body>
+</html>
