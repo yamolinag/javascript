@@ -5,6 +5,9 @@ const supabaseKey = 'sb_publishable_GKCUvPhh26exHDuzbRtaAg_i2dulF0-';
 const supabase = createClient(supabaseUrl, supabaseKey);
 const loginContainer = document.getElementById('logincontainer');
 var usuario = null;
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('cerrassession').style.display = 'none';
+
 async function cerrarSesion() {
     const { error } = await supabase.auth.signOut();
     if (error) {

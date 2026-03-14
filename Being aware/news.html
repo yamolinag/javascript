@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>news</title>
     <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="Reset.css">
+    <link rel="icon" href="data:,">
 </head>
 <body>
   <lable>buscador</lable>
@@ -20,11 +22,11 @@
 
 <div>
     <lable>noticia</lable>
-<input type="text" id="noticia"></input>
+<textarea placeholder="Escriba aquí su noticia..." id="noticia" rows="2"></textarea>
 </div>
- <BUtton>Guardar</BUtton>
+ <button onclick="guardarNoticia()">Guardar</button>
 </div>
   <button onclick="mostrarventana()">subir noticia</button>
-  <script src="news.js"></script>
+  <script type="module" src="news.js"></script>
 </body>
 </html>

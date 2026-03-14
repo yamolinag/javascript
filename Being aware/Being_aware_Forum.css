@@ -1,7 +1,6 @@
 body {
-    /* Color de fondo crema muy suave para que no canse la vista */
+   
     background-color: #f9f7f2; 
-    /* Un patrón de líneas diagonales casi invisibles para un toque elegante */
     background-image: linear-gradient(45deg, rgba(0,0,0,0.01) 25%, transparent 25%, transparent 50%, rgba(0,0,0,0.01) 50%, rgba(0,0,0,0.01) 75%, transparent 75%, transparent);
     background-size: 100px 100px;
     color: #1a1a1a; 
@@ -13,7 +12,6 @@ body {
     align-items: center;
 }
 
-/* --- TÍTULOS --- */
 h1 {
     color: #333;
     margin-top: 20px;
@@ -22,46 +20,62 @@ h1 {
 
 h2 {
     color: firebrick;
-    margin-bottom: 6vh;
+    margin-bottom: 3vh;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.8rem;    
 }
-
-/* --- MENSAJES ESTILO WHATSAPP (CORREGIDOS) --- */
-
-/* Mensajes Azules (Otros): Pegados a la IZQUIERDA */
 .message {
     border: 2px solid #084298;
-    background-color: #cfe2ff; /* Tu azul original */
+    background-color: #cfe2ff; 
     color: #000000;
     display: flex;
     flex-direction: column;
     align-items: start;
     margin: 10px 15px;
-    border-radius: 15px 15px 15px 0px; /* Esquina de chat */
-    padding: 12px;
-    width: fit-content; /* Se ajusta al texto */
+    border-radius: 15px 15px 15px 0px; 
+    padding: 12px; 
+    width: fit-content;
     max-width: 75vw;
-    align-self: flex-start; /* Alineación a la izquierda */
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
-/* Mensajes Verdes (Tuyos): Pegados a la DERECHA */
+.messageown p {
+    font-size: 1.4rem;
+}
+
+
 .messageown {
     border: 2px solid #0f5132;
-    background-color: #d1e7dd; /* Tu verde original */
+    background-color: #d1e7dd; 
     color: #000000;
     display: flex;
     flex-direction: column;
     align-items: end;
     margin: 10px 15px;
-    border-radius: 15px 15px 0px 15px; /* Esquina de chat */
+    border-radius: 15px 15px 0px 15px; 
     padding: 12px;
-    width: fit-content; /* Se ajusta al texto */
+    width: fit-content;
     max-width: 75vw;
-    align-self: flex-end; /* Alineación a la derecha */
+    transform: translateX(-100%);
+    position: relative;
+    left: 97%;
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    word-break: break-word;   
+
+    
+   
 }
 
-/* --- LA BURBUJA FLOTANTE (REFORZADA) --- */
+.message p {
+    font-size: 1.4rem;
+}
+
+
 #textinputcontainersuperior {
-    position: fixed; /* Persigue al usuario */
+    position: fixed;
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
@@ -72,9 +86,8 @@ h2 {
     padding: 12px 20px;
     width: 85vw;
     max-width: 450px;
-    border-radius: 35px; /* Diseño de burbuja redondeada */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra suave para que flote */
-    
+    border-radius: 35px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,11 +112,11 @@ h2 {
     border-radius: 20px;
     border: 1px solid #ddd;
     background-color: #fafafa;
-    color: #000; /* Texto claro al escribir */
+    color: #000; 
 }
 
 #textinputcontainer button {
-    background-color: #d9534f; /* Rojo suave */
+    background-color: #d9534f; 
     color: white;
     border: none;
     padding: 0 18px;
@@ -111,8 +124,11 @@ h2 {
     font-weight: bold;
     cursor: pointer;
 }
+#textinputcontainer button:hover {
+    background-color: #850c08; 
+}
 
-/* Espacio al final para que la burbuja no tape nada */
+
 #invisiblebox {
     width: 100%;
     height: 150px; 

@@ -1,0 +1,72 @@
+body {
+   
+    background-color: #f9f7f2; 
+    background-image: linear-gradient(45deg, rgba(0,0,0,0.01) 25%, transparent 25%, transparent 50%, rgba(0,0,0,0.01) 50%, rgba(0,0,0,0.01) 75%, transparent 75%, transparent);
+    background-size: 100px 100px;
+    color: #1a1a1a; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+h2 {
+    color: firebrick;
+    margin: 3vh 7vw;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.8rem;
+}
+
+button{
+    height: 5vh;
+    width: 10vw;
+    background-color: #5f8fd7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #4a6fb3;
+}
+
+.sectionbutton{
+    height: 30vh;
+    width: 25vw;
+    background-color: #5fd7673c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 3rem;
+    border: 2px solid #5f8fd7;
+    margin: 2vh;
+    color: rgba(230, 71, 71, 0.952);
+    transition: 1s;
+    font-family: 'Times New Roman', Times, serif;
+}
+.sectionbutton:hover {
+    background-color: #5fd767;
+    width: 24vw;
+    height: 29vh;
+    color: rgba(230, 71, 71, 0.952);
+    border: 2px solid #850c08;
+}
+
+#buttoncontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
