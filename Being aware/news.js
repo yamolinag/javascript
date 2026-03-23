@@ -74,8 +74,27 @@ function rennderNews(news) {
         `;
         newsContainer.appendChild(noticiaElement);
     });
+}async function changeSection(section) {
+    const paginasPublicas = [
+        'Being_aware_welcome.html',
+        'Being_aware_Forum.html',
+        'news.html'
+    ];
+
+    if (paginasPublicas.includes(section)) {
+        window.location.href = section;
+        return;
+    }
+
+    const usuarioActivo = await Getuserdata();
+    if (!usuarioActivo) {
+        alert("Debes iniciar sesión para acceder a esta sección.");
+        return;
+    }
+
+    window.location.href = section;
 }
 
-
+window.changeSection = changeSection;
 window.mostrarventana = mostrarventana;
 window.guardarNoticia = guardarNoticia;

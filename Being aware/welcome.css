@@ -25,6 +25,9 @@ h2 {
     font-size: 1.8rem;
 }
 
+
+
+
 button{
     height: 5vh;
     width: 10vw;
@@ -59,7 +62,7 @@ button:hover {
     background-color: #5fd767;
     width: 24vw;
     height: 29vh;
-    color: rgba(230, 71, 71, 0.952);
+    color: rgba(230, 7between1, 71, 0.952);
     border: 2px solid #850c08;
 }
 
@@ -69,4 +72,43 @@ button:hover {
     align-items: center;
     flex-direction: row;
     width: 100%;
+}
+
+#buttoncontainerpanel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 96vh;
+    padding: 2vh;
+}
+
+#ico{
+    font-size: 7rem;
+    color: royalblue;
+
+}
+
+#panellateral{
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    width: fit-content;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.buttonlateral{
+    height: 5vh;
+    width: 3vw;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#cerrassession{
+    background-color: #ff0800;
 }

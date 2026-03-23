@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="Being_aware_Forum.css">
     <link rel="stylesheet" href="Reset.css">
     <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 <body>
+       <details id="panellateral">
+        <summary><span class="material-symbols-outlined">menu</span></summary>
+<div id="buttoncontainerpanel">
+    <button onclick="changeSection('Being_aware_welcome.html')"class="buttonlateral"><span class="material-symbols-outlined">home</span></button>
+    <button onclick="changeSection('Being_aware_Forum.html')"class="buttonlateral"><span class="material-symbols-outlined">forum</span></button>
+            <button onclick="changeSection('news.html')"class="buttonlateral"><span class="material-symbols-outlined">newspaper</span></button>    
+</div>
+    </details>
     <h1>Being aware</h1>
     <section>
         <h2>Foro</h2>
@@ -23,7 +32,7 @@
             <p>¡Participa en el foro para discutir temas importantes y compartir ideas con otros miembros de la comunidad escolar!</p>
             <div id="textinputcontainer">
                 <textarea id="textInput" placeholder="Escribe tu mensaje aquí..." rows="1"></textarea>
-                <button onclick="enviarMensaje()">Enviar</button>
+                <button onclick="enviarMensaje()"><span class="material-symbols-outlined"id="sendico">send</span></button>
   </div>
         </div>
     </section>

@@ -4,12 +4,29 @@ const supabaseUrl = 'https://mtdblkrntsoeilwmhzgn.supabase.co';
 const supabaseKey = 'sb_publishable_GKCUvPhh26exHDuzbRtaAg_i2dulF0-'; 
 const supabase = createClient(supabaseUrl, supabaseKey);
 const messageContainer = document.getElementById('messagecontainer');
-Getuserdata()
+
 async function Getuserdata(){
 const { data: { user }, error } = await supabase.auth.getUser();
     if (error || !user) return null;
     return user;;
 }
+
+async function init() {
+    const usuarioActivo = await Getuserdata();
+    if (!usuarioActivo) {
+        const butonlogin = document.getElementById('login');
+        if (butonlogin) butonlogin.style.display = 'block';
+        const butoncerrar = document.getElementById('cerrassession');
+        if (butoncerrar) butoncerrar.style.display = 'none';
+    } else {
+        const butonlogin = document.getElementById('login');
+        if (butonlogin) butonlogin.style.display = 'none';
+        const butoncerrar = document.getElementById('cerrassession');
+        if (butoncerrar) butoncerrar.style.display = 'block';
+    }
+}
+
+init();
 
 async function enviarMensaje() {
     const textInput = document.getElementById('textInput'); 
@@ -78,7 +95,7 @@ async function renderMessages(mensajes) {
             <h3>${msg.user}</h3>
             <p>${msg.text}</p>
             <h5>${fechaLegible}</h5>
-            ${msg.user === miNombre ? `<button onclick="eliminarMensaje('${msg.id}','${msg.user}')">Eliminar</button>` : ''}
+            ${msg.user === miNombre ? `<button onclick="eliminarMensaje('${msg.id}','${msg.user}')" id="eliminarMensaje"><span class="material-symbols-outlined"id="deleteico">delete</span></button>` : ''}
             <hr>
         `;
 
@@ -110,20 +127,43 @@ async function eliminarMensaje(params,usuarioMensaje) {
     }
 }
 const canalMensajes = supabase
-  .channel('cambios-en-mensajes') // Puedes ponerle cualquier nombre al canal
+  .channel('cambios-en-mensajes') 
   .on(
     'postgres_changes', 
     { 
-      event: '*', // Escucha inserciones, actualizaciones y eliminaciones
+      event: '*', 
       schema: 'public', 
       table: 'mensajes' 
     }, 
     (payload) => {
       console.log('¡Cambio detectado en la base de datos!', payload);
-      obtenerMensajes(); // Refresca la lista de mensajes automáticamente
+      obtenerMensajes(); 
     }
   )
   .subscribe();
+async function changeSection(section) {
+    const paginasPublicas = [
+        'Being_aware_welcome.html',
+        'Being_aware_Forum.html',
+        'news.html'
+    ];
+
+    if (paginasPublicas.includes(section)) {
+        window.location.href = section;
+        return;
+    }
+
+
+    const usuarioActivo = await Getuserdata();
+    if (!usuarioActivo) {
+        alert("Debes iniciar sesión para acceder a esta sección.");
+        return;
+    }
+
+    window.location.href = section;
+}
+
+window.changeSection = changeSection;
 window.enviarMensaje = enviarMensaje;
 obtenerMensajes();
 window.eliminarMensaje = eliminarMensaje;

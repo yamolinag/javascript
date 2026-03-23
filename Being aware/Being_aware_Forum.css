@@ -114,22 +114,87 @@ h2 {
 }
 
 #textinputcontainer button {
-    background-color: #d9534f; 
+    background-color: #2a91f7; 
     color: white;
     border: none;
     padding: 0 18px;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
+    height: fit-content;
+    width: fit-content;
 }
 #textinputcontainer button:hover {
-    background-color: #850c08; 
+    background-color: #0367ca; 
 }
 
 
 #invisiblebox {
     width: 100%;
     height: 150px; 
+}
+
+#buttoncontainerpanel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 96vh;
+    padding: 2vh;
+}
+
+#panellateral{
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    width: fit-content;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+button{
+    height: 5vh;
+    width: 10vw;
+    background-color: #5f8fd7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#eliminarMensaje{
+    background-color: #91545200;
+    width: fit-content;
+}
+
+#deleteico{
+    font-size: 1.5rem;
+    color: #ff0800;
+}
+
+#deleteico:hover{
+    color: #9b110c;
+    text-shadow: 0 0 5px #ff0901ab;
+}
+#sendico{
+    font-size: 2.2rem;
+    color: white;
+}
+
+.buttonlateral{
+    height: 5vh;
+    width: 3vw;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #4a6fb3;
 }
 
 
