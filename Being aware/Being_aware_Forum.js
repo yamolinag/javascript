@@ -63,28 +63,25 @@ async function renderMessages(mensajes) {
     messageContainer.innerHTML = '';
     const usuarioActivo = await Getuserdata();
     const miNombre = usuarioActivo ? usuarioActivo.user_metadata.display_name : null;
-    mensajes.forEach(async (msg) => {
+
+    mensajes.forEach((msg) => {
         const messageElement = document.createElement('div');
-    
-        const fechaLegible = new Date(msg.date).toLocaleString(); 
-        if(msg.user == miNombre) {
-             messageElement.innerHTML = `
-             <div class="messageown">
-            <h3>${msg.user}</h3>
-            <p>${msg.text}</p>
-            <h5>${fechaLegible}</h5>
-            <button onclick="eliminarMensaje('${msg.id}','${msg.user}')">Eliminar</button>
-            <hr>
-            </div>`;
-            
+        const fechaLegible = new Date(msg.date).toLocaleString();
+
+        if (msg.user === miNombre) {
+            messageElement.className = 'messageown';
         } else {
-        messageElement.innerHTML = `<div class="message">
+            messageElement.className = 'message';
+        }
+
+        messageElement.innerHTML = `
             <h3>${msg.user}</h3>
             <p>${msg.text}</p>
             <h5>${fechaLegible}</h5>
+            ${msg.user === miNombre ? `<button onclick="eliminarMensaje('${msg.id}','${msg.user}')">Eliminar</button>` : ''}
             <hr>
-            </div>`;
-        }
+        `;
+
         messageContainer.appendChild(messageElement);
     });
 }

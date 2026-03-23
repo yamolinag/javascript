@@ -52,6 +52,12 @@ button{
     font-size: 1rem;
 }
 
+#subirnoticia{
+    position: fixed;
+    bottom: 93vh;
+    right: 5vw;
+}
+
 button:hover {
     background-color: #4a6fb3;
 }

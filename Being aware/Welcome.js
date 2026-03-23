@@ -89,9 +89,14 @@ const {data, error} = await supabase.auth.signUp({
     }
 
 
-
+const usuarioActivo = await Getuserdata();
 function changeSection(section) {
-    window.location.href = section;
+    if (!usuarioActivo) {
+        alert("Debes iniciar sesión para acceder a esta sección.");
+        return;
+    }else{
+        window.location.href = section;
+    }
 }
 
 window.changeSection = changeSection;
